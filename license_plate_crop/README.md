@@ -11,15 +11,16 @@ license_plate_crop/
 ├── input_images/       # วางภาพต้นฉบับที่ต้องการตรวจจับ
 ├── output_crops/       # ภาพป้ายทะเบียนที่ crop แล้วจะถูกบันทึกที่นี่
 ├── train_model1.py     # สคริปต์เทรนโมเดล Model 1
-├── detect_and_crop.py  # สคริปต์ตรวจจับ + crop
-└── requirements.txt
+└── detect_and_crop.py  # สคริปต์ตรวจจับ + crop
 ```
 
 ## วิธีใช้งาน
 
 ### 1. ติดตั้ง dependencies
+
+ใช้ไฟล์ `requirements.txt` ที่ root ของโปรเจกต์ (รวม dependencies ของทุกโมดูลไว้ที่เดียว)
 ```
-pip install -r requirements.txt
+pip install -r ../requirements.txt
 ```
 
 ### 2. เตรียม dataset สำหรับเทรน

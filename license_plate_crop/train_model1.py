@@ -1,23 +1,47 @@
 """
-เทรน YOLOv8 (Model 1) สำหรับตรวจจับตำแหน่งป้ายทะเบียน
-ใช้ dataset ที่ดาวน์โหลดมาจาก Roboflow Universe (รูปแบบ YOLOv8)
+สคริปต์นี้ทำ 2 อย่าง:
+1. โหลดโมเดล YOLOv8 ตั้งต้น (ยังไม่รู้จักป้ายทะเบียน)
+2. เทรนโมเดลด้วย dataset ป้ายทะเบียนที่ดาวน์โหลดมาจาก Roboflow Universe
+
+หมายเหตุ: ต้องดาวน์โหลด dataset (ฟอร์แมต YOLOv8) มาวางไว้ในโฟลเดอร์ dataset/ ก่อน
+(ดูวิธีทำใน README.md)
 """
 
 from pathlib import Path
 from ultralytics import YOLO
 
-# ---------- ตั้งค่า ----------
+# ============================================================
+# ขั้นตอนที่ 1: ตั้งค่าตัวแปรต่างๆ ที่จะใช้ในสคริปต์
+# ============================================================
+
 BASE_DIR = Path(__file__).parent
 DATA_YAML = BASE_DIR / "dataset" / "data.yaml"   # ไฟล์ data.yaml ที่มากับ dataset จาก Roboflow
 BASE_MODEL = "yolov8n.pt"                        # โมเดลตั้งต้น (จะดาวน์โหลดอัตโนมัติครั้งแรกที่รัน)
-EPOCHS = 50
-IMG_SIZE = 640
+EPOCHS = 50                                       # จำนวนรอบที่จะเทรน ยิ่งมากยิ่งแม่นแต่ยิ่งใช้เวลานาน
+IMG_SIZE = 640                                    # ขนาดภาพ (พิกเซล) ที่ใช้เทรน
 
-def main():
+
+# ============================================================
+# ขั้นตอนที่ 2: เทรนโมเดล
+# ============================================================
+
+def train_model():
     model = YOLO(BASE_MODEL)
     model.train(data=DATA_YAML, epochs=EPOCHS, imgsz=IMG_SIZE)
-    # โมเดลที่เทรนเสร็จจะถูกบันทึกไว้ที่ runs/detect/train/weights/best.pt
+
+    # เมื่อเทรนเสร็จ โมเดลที่ดีที่สุดจะถูกบันทึกไว้ที่ runs/detect/train/weights/best.pt โดยอัตโนมัติ
     # ให้คัดลอกไฟล์นั้นไปไว้ที่ models/model1_plate_detect.pt เพื่อใช้กับ detect_and_crop.py
+    print("\nเทรนเสร็จแล้ว! คัดลอกไฟล์ runs/detect/train/weights/best.pt")
+    print("ไปไว้ที่ models/model1_plate_detect.pt เพื่อใช้งานต่อ")
+
+
+# ============================================================
+# ขั้นตอนที่ 3: รันขั้นตอนข้างบน
+# ============================================================
+
+def main():
+    train_model()
+
 
 if __name__ == "__main__":
     main()

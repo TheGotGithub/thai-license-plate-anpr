@@ -7,15 +7,14 @@
 
 ```
 license_plate_gui/
-├── app.py           # หน้าเว็บ Streamlit
-└── requirements.txt
+└── app.py           # หน้าเว็บ Streamlit
 ```
 
 ## วิธีใช้งาน
 
-1. ติดตั้ง dependencies
+1. ติดตั้ง dependencies (ใช้ไฟล์ `requirements.txt` ที่ root ของโปรเจกต์ รวมทุกโมดูลไว้ที่เดียว)
    ```
-   pip install -r requirements.txt
+   pip install -r ../requirements.txt
    ```
 
 2. รัน

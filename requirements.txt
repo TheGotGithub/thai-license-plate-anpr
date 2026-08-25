@@ -1,0 +1,16 @@
+# รวม dependencies ของทุกโมดูลในโปรเจกต์นี้ไว้ในไฟล์เดียว
+# ใช้ได้ทั้งบน Mac (เครื่อง dev) และ Raspberry Pi (เครื่องที่รันจริง)
+# ติดตั้งด้วย: pip install -r requirements.txt
+
+# license_plate_crop - ตรวจจับ + crop ป้ายทะเบียน (YOLOv8)
+ultralytics
+pillow
+
+# license_plate_ocr - อ่านข้อความด้วย Tesseract OCR
+pytesseract
+opencv-python
+
+# license_plate_gui - หน้าเว็บ Streamlit
+streamlit
+
+# license_plate_match ใช้แต่ standard library ของ Python ไม่ต้องติดตั้งเพิ่ม

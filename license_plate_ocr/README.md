@@ -7,8 +7,7 @@
 ```
 license_plate_ocr/
 ├── output_text/         # ผลลัพธ์ข้อความที่อ่านได้ (plate_texts.csv)
-├── ocr_plate.py         # สคริปต์หลัก
-└── requirements.txt
+└── ocr_plate.py         # สคริปต์หลัก
 ```
 
 อ่านภาพต้นทางจาก `../license_plate_crop/output_crops/` โดยตรง (ผลลัพธ์จากขั้นตอนก่อนหน้า) ไม่ต้อง copy ไฟล์มาเอง
@@ -37,9 +36,9 @@ tesseract --list-langs
 
 ## วิธีใช้งาน
 
-1. ติดตั้ง dependencies
+1. ติดตั้ง dependencies (ใช้ไฟล์ `requirements.txt` ที่ root ของโปรเจกต์ รวมทุกโมดูลไว้ที่เดียว)
    ```
-   pip install -r requirements.txt
+   pip install -r ../requirements.txt
    ```
 
 2. รันขั้นตอน `license_plate_crop` ให้เสร็จก่อน เพื่อให้มีภาพอยู่ใน `../license_plate_crop/output_crops/`
