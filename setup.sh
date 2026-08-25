@@ -25,7 +25,7 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_DIR="$BASE_DIR/venv"
 
 # ============================================================
-# ขั้นตอนที่ 1: ติดตั้ง Tesseract OCR + ภาษาไทยระดับระบบ (ถ้ายังไม่มี)
+# ขั้นตอนที่ 1: ติดตั้งโปรแกรมระดับระบบที่ยังไม่มี (Tesseract OCR + picamera2)
 # ============================================================
 
 if ! command -v tesseract >/dev/null 2>&1; then
@@ -34,13 +34,23 @@ if ! command -v tesseract >/dev/null 2>&1; then
     sudo apt-get install -y tesseract-ocr tesseract-ocr-tha
 fi
 
+# picamera2 ใช้ถ่ายภาพจากกล้อง Pi Camera (license_plate_capture/capture.py)
+# มีเฉพาะบน Raspberry Pi เท่านั้น ข้ามไปถ้าไม่ใช่ apt (เช่นรันบน Mac)
+if command -v apt-get >/dev/null 2>&1 && ! python3 -c "import picamera2" 2>/dev/null; then
+    echo "กำลังติดตั้ง picamera2..."
+    sudo apt-get update -qq
+    sudo apt-get install -y python3-picamera2
+fi
+
 # ============================================================
 # ขั้นตอนที่ 2: สร้าง venv ถ้ายังไม่มี
 # ============================================================
 
 if [ ! -d "$VENV_DIR" ]; then
     echo "กำลังสร้าง venv..."
-    python3 -m venv "$VENV_DIR"
+    # --system-site-packages ให้ venv มองเห็น picamera2 ที่ apt ติดตั้งไว้ระดับระบบ
+    # (license_plate_capture/capture.py ต้องใช้ตัวนี้ถ่ายภาพจากกล้อง Pi Camera)
+    python3 -m venv --system-site-packages "$VENV_DIR"
 fi
 
 # ============================================================
