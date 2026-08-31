@@ -61,7 +61,7 @@
   .content .goal-line{ font-size:14.5px; color:var(--gray); margin:8px 0 20px; padding-left:2px;}
   .content-grid{ display:flex; gap:36px; flex:1; overflow:hidden; align-items:center;}
   .col-text{ flex:1.15; display:flex; flex-direction:column; gap:13px; justify-content:center;}
-  .col-media{ flex:1; display:flex; align-items:center; justify-content:center;}
+  .col-media{ flex:1; min-width:0; display:flex; align-items:center; justify-content:center;}
   .bullet{ display:flex; gap:12px; font-size:21px; line-height:1.45; color:var(--dark); font-weight:400;}
   .bullet .dot{ width:9px; height:9px; border-radius:50%; background:var(--cyan); margin-top:11px; flex-shrink:0;}
   .bullet b{ color:var(--dark); font-weight:600;}
@@ -211,10 +211,9 @@
         <div class="bullet"><div class="dot"></div><div>ภาพรวม timeline: เช้าปูพื้นฐาน บ่ายลงมือทดลองจริงกับฮาร์ดแวร์</div></div>
       </div>
       <div class="col-media">
-        <div class="placeholder">
-          <div class="ic">🚗</div>
-          <div class="lbl">Thai ANPR Demo System</div>
-          <div class="sub">ระบบอ่านป้ายทะเบียนรถยนต์ไทยบน Raspberry Pi 5 พร้อมหน้าเว็บ Streamlit Dashboard</div>
+        <div class="img-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/License_plate_of_Thailand_002.jpg?width=500" alt="Thai license plate">
+          <div class="img-caption">ป้ายทะเบียนรถยนต์ไทย — โจทย์หลักที่ระบบ AI Camera นี้จะเรียนรู้อ่านให้ได้ (ภาพ: Wikimedia Commons)</div>
         </div>
       </div>
     </div>
@@ -427,12 +426,7 @@
             <span class="cb-filename">Terminal — setup.sh</span>
           </div>
           <div class="cb-body">
-<div>pi@raspberrypi:~/ComVision_workshop <span class="c2">$</span> <span class="c1">source setup.sh</span></div>
-<div class="c3">กำลังติดตั้ง Tesseract OCR...</div>
-<div class="c3">กำลังสร้าง venv (--system-site-packages)...</div>
-<div class="c3">เปิดใช้งาน venv แล้ว: /home/pi/.../venv</div>
-<div class="c3">กำลังติดตั้ง torch (CPU-only) & requirements...</div>
-<div class="c2">✓ ติดตั้งเสร็จสมบูรณ์ พร้อมใช้งาน!</div>
+<div>pi@raspberrypi:~/ComVision_workshop <span class="c2">$</span> <span class="c1">source setup.sh</span></div><div class="c3">กำลังติดตั้ง Tesseract OCR...</div><div class="c3">กำลังสร้าง venv (--system-site-packages)...</div><div class="c3">เปิดใช้งาน venv แล้ว: /home/pi/.../venv</div><div class="c3">กำลังติดตั้ง torch (CPU-only) & requirements...</div><div class="c2">✓ ติดตั้งเสร็จสมบูรณ์ พร้อมใช้งาน!</div>
           </div>
         </div>
       </div>
@@ -463,11 +457,7 @@
             <span class="cb-filename">hello.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># โปรแกรม Python บรรทัดแรกของเรา</div>
-<div>print(<span class="c2">"Hello, Cytron AI Camera!"</span>)</div>
-<div>&nbsp;</div>
-<div class="c3"># ผลลัพธ์ที่หน้าจอ Terminal</div>
-<div class="c1">Hello, Cytron AI Camera!</div>
+<div class="c3"># โปรแกรม Python บรรทัดแรกของเรา</div><div>print(<span class="c2">"Hello, Cytron AI Camera!"</span>)</div><div>&nbsp;</div><div class="c3"># ผลลัพธ์ที่หน้าจอ Terminal</div><div class="c1">Hello, Cytron AI Camera!</div>
           </div>
         </div>
       </div>
@@ -499,15 +489,7 @@
             <span class="cb-filename">basic_python/01_variables_datatypes.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 01_variables_datatypes.py - ตัวแปรและชนิดข้อมูล</div>
-<div>name = <span class="c2">"Got"</span></div>
-<div>age = <span class="c2">16</span></div>
-<div>height = <span class="c2">168.5</span></div>
-<div>is_student = <span class="c1">True</span></div>
-<div>&nbsp;</div>
-<div>print(<span class="c2">"สวัสดีคุณ"</span>, name)</div>
-<div>print(<span class="c2">"อายุ:"</span>, age, <span class="c2">"ส่วนสูง:"</span>, height)</div>
-<div>print(<span class="c2">"เป็นนักเรียน:"</span>, is_student)</div>
+<div class="c3"># 01_variables_datatypes.py - ตัวแปรและชนิดข้อมูล</div><div>name = <span class="c2">"Got"</span></div><div>age = <span class="c2">16</span></div><div>height = <span class="c2">168.5</span></div><div>is_student = <span class="c1">True</span></div><div>&nbsp;</div><div>print(<span class="c2">"สวัสดีคุณ"</span>, name)</div><div>print(<span class="c2">"อายุ:"</span>, age, <span class="c2">"ส่วนสูง:"</span>, height)</div><div>print(<span class="c2">"เป็นนักเรียน:"</span>, is_student)</div>
           </div>
         </div>
       </div>
@@ -537,14 +519,7 @@
             <span class="cb-filename">greet.py</span>
           </div>
           <div class="cb-body">
-<div>name = input(<span class="c2">"ชื่อของคุณ: "</span>)</div>
-<div>plate_in = input(<span class="c2">"ระบุเลขทะเบียน: "</span>)</div>
-<div>&nbsp;</div>
-<div>print(<span class="c2">"สวัสดีคุณ"</span>, name)</div>
-<div>print(<span class="c2">"บันทึกทะเบียน:"</span>, plate_in)</div>
-<div>&nbsp;</div>
-<div class="c3"># ผู้ใช้พิมพ์: Got, 1กก1234</div>
-<div class="c3"># ผลลัพธ์: สวัสดีคุณ Got | บันทึกทะเบียน: 1กก1234</div>
+<div>name = input(<span class="c2">"ชื่อของคุณ: "</span>)</div><div>plate_in = input(<span class="c2">"ระบุเลขทะเบียน: "</span>)</div><div>&nbsp;</div><div>print(<span class="c2">"สวัสดีคุณ"</span>, name)</div><div>print(<span class="c2">"บันทึกทะเบียน:"</span>, plate_in)</div><div>&nbsp;</div><div class="c3"># ผู้ใช้พิมพ์: Got, 1กก1234</div><div class="c3"># ผลลัพธ์: สวัสดีคุณ Got | บันทึกทะเบียน: 1กก1234</div>
           </div>
         </div>
       </div>
@@ -575,13 +550,7 @@
             <span class="cb-filename">operators.py</span>
           </div>
           <div class="cb-body">
-<div>conf_score = <span class="c2">0.85</span></div>
-<div>conf_threshold = <span class="c2">0.50</span></div>
-<div>&nbsp;</div>
-<div>is_valid = conf_score &gt;= conf_threshold</div>
-<div>print(<span class="c2">"ผ่านเกณฑ์ความมั่นใจ:"</span>, is_valid)</div>
-<div>&nbsp;</div>
-<div class="c3"># ผลลัพธ์: ผ่านเกณฑ์ความมั่นใจ: True</div>
+<div>conf_score = <span class="c2">0.85</span></div><div>conf_threshold = <span class="c2">0.50</span></div><div>&nbsp;</div><div>is_valid = conf_score &gt;= conf_threshold</div><div>print(<span class="c2">"ผ่านเกณฑ์ความมั่นใจ:"</span>, is_valid)</div><div>&nbsp;</div><div class="c3"># ผลลัพธ์: ผ่านเกณฑ์ความมั่นใจ: True</div>
           </div>
         </div>
       </div>
@@ -612,13 +581,7 @@
             <span class="cb-filename">basic_python/02_operators_ifelse.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 02_operators_ifelse.py - การคำนวณและเงื่อนไข if-else</div>
-<div>score = <span class="c2">75</span></div>
-<div>&nbsp;</div>
-<div><span class="c1">if</span> score &gt;= <span class="c2">50</span>:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"ผลการสอบ: ผ่านเกณฑ์ (PASS)"</span>)</div>
-<div><span class="c1">else</span>:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"ผลการสอบ: ไม่ผ่าน (FAIL)"</span>)</div>
+<div class="c3"># 02_operators_ifelse.py - การคำนวณและเงื่อนไข if-else</div><div>score = <span class="c2">75</span></div><div>&nbsp;</div><div><span class="c1">if</span> score &gt;= <span class="c2">50</span>:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"ผลการสอบ: ผ่านเกณฑ์ (PASS)"</span>)</div><div><span class="c1">else</span>:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"ผลการสอบ: ไม่ผ่าน (FAIL)"</span>)</div>
           </div>
         </div>
       </div>
@@ -649,13 +612,7 @@
             <span class="cb-filename">loop.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># วนรอบประมวลผล 3 ครั้ง</div>
-<div><span class="c1">for</span> i <span class="c1">in</span> range(<span class="c2">3</span>):</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"กำลังตรวจจับภาพที่"</span>, i + <span class="c2">1</span>)</div>
-<div>&nbsp;</div>
-<div class="c3"># กำลังตรวจจับภาพที่ 1</div>
-<div class="c3"># กำลังตรวจจับภาพที่ 2</div>
-<div class="c3"># กำลังตรวจจับภาพที่ 3</div>
+<div class="c3"># วนรอบประมวลผล 3 ครั้ง</div><div><span class="c1">for</span> i <span class="c1">in</span> range(<span class="c2">3</span>):</div><div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"กำลังตรวจจับภาพที่"</span>, i + <span class="c2">1</span>)</div><div>&nbsp;</div><div class="c3"># กำลังตรวจจับภาพที่ 1</div><div class="c3"># กำลังตรวจจับภาพที่ 2</div><div class="c3"># กำลังตรวจจับภาพที่ 3</div>
           </div>
         </div>
       </div>
@@ -686,12 +643,7 @@
             <span class="cb-filename">basic_python/03_loops_lists.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 03_loops_lists.py - ลิสต์และการทำซ้ำ Loop</div>
-<div>plates = [<span class="c2">"1กก1234"</span>, <span class="c2">"2ขข5678"</span>, <span class="c2">"3คค9999"</span>]</div>
-<div>&nbsp;</div>
-<div>print(<span class="c2">"รายการทะเบียนรถในระบบ:"</span>)</div>
-<div><span class="c1">for</span> p <span class="c1">in</span> plates:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"🚗 ทะเบียน:"</span>, p)</div>
+<div class="c3"># 03_loops_lists.py - ลิสต์และการทำซ้ำ Loop</div><div>plates = [<span class="c2">"1กก1234"</span>, <span class="c2">"2ขข5678"</span>, <span class="c2">"3คค9999"</span>]</div><div>&nbsp;</div><div>print(<span class="c2">"รายการทะเบียนรถในระบบ:"</span>)</div><div><span class="c1">for</span> p <span class="c1">in</span> plates:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="c2">"🚗 ทะเบียน:"</span>, p)</div>
           </div>
         </div>
       </div>
@@ -722,15 +674,7 @@
             <span class="cb-filename">basic_python/04_functions.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 04_functions.py - การสร้างฟังก์ชันใช้งานซ้ำ</div>
-<div><span class="c1">def</span> check_plate(plate, allowed_list):</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> plate <span class="c1">in</span> allowed_list:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">return</span> <span class="c2">"อนุญาตผ่าน (ALLOWED)"</span></div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">return</span> <span class="c2">"ไม่อนุญาต (DENIED)"</span></div>
-<div>&nbsp;</div>
-<div>whitelist = [<span class="c2">"1กก1234"</span>, <span class="c2">"2ขข5678"</span>]</div>
-<div>result = check_plate(<span class="c2">"1กก1234"</span>, whitelist)</div>
-<div>print(<span class="c2">"ผลการตรวจสอบ:"</span>, result)</div>
+<div class="c3"># 04_functions.py - การสร้างฟังก์ชันใช้งานซ้ำ</div><div><span class="c1">def</span> check_plate(plate, allowed_list):</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> plate <span class="c1">in</span> allowed_list:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">return</span> <span class="c2">"อนุญาตผ่าน (ALLOWED)"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">return</span> <span class="c2">"ไม่อนุญาต (DENIED)"</span></div><div>&nbsp;</div><div>whitelist = [<span class="c2">"1กก1234"</span>, <span class="c2">"2ขข5678"</span>]</div><div>result = check_plate(<span class="c2">"1กก1234"</span>, whitelist)</div><div>print(<span class="c2">"ผลการตรวจสอบ:"</span>, result)</div>
           </div>
         </div>
       </div>
@@ -753,10 +697,9 @@
         <div class="bullet"><div class="dot"></div><div>มีเวอร์ชัน Standard FOV (75°) และ Wide FOV (120°) ให้เลือกใช้งาน</div></div>
       </div>
       <div class="col-media">
-        <div class="placeholder">
-          <div class="ic">📷</div>
-          <div class="lbl">Raspberry Pi Camera Module 3</div>
-          <div class="sub">12MP Sony IMX708 พร้อม Phase Detection Autofocus (PDAF)</div>
+        <div class="img-card">
+          <img src="https://cdn-shop.adafruit.com/970x728/5657-09.jpg" alt="Raspberry Pi Camera Module 3">
+          <div class="img-caption">Raspberry Pi Camera Module 3 — เซนเซอร์ Sony IMX708 12MP (ภาพ: Adafruit)</div>
         </div>
       </div>
     </div>
@@ -778,10 +721,9 @@
         <div class="bullet"><div class="dot"></div><div>ดันสายลงไปจนสุดในแนวตรง แล้วกดคลิปล็อกสีดำกลับลงมาให้แน่นสนิท</div></div>
       </div>
       <div class="col-media">
-        <div class="placeholder">
-          <div class="ic">🔌</div>
-          <div class="lbl">CSI Cable Connection</div>
-          <div class="sub">หันด้านโลหะทองแดงเข้าหาพอร์ต HDMI เสมอ แล้วกดตัวล็อกให้แน่น</div>
+        <div class="img-card">
+          <img src="https://cdn-shop.adafruit.com/970x728/5657-04.jpg" alt="CSI cable connected to Raspberry Pi board">
+          <div class="img-caption">สาย CSI เชื่อมกล้องเข้ากับบอร์ด Raspberry Pi — ด้านโลหะทองแดงหันเข้าหาพอร์ต HDMI (ภาพ: Adafruit)</div>
         </div>
       </div>
     </div>
@@ -813,10 +755,7 @@
             <span class="cb-filename">Terminal — rpicam-hello</span>
           </div>
           <div class="cb-body">
-<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">rpicam-hello</span></div>
-<div class="c3">[0:00:01.204] INFO Camera module: imx708 [4608x2592]</div>
-<div class="c3">[0:00:01.312] INFO Preview window opened successfully</div>
-<div class="c2">✓ กล้องทำงานปกติ กำลังแสดงภาพสดบนหน้าจอ...</div>
+<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">rpicam-hello</span></div><div class="c3">[0:00:01.204] INFO Camera module: imx708 [4608x2592]</div><div class="c3">[0:00:01.312] INFO Preview window opened successfully</div><div class="c2">✓ กล้องทำงานปกติ กำลังแสดงภาพสดบนหน้าจอ...</div>
           </div>
         </div>
       </div>
@@ -847,18 +786,7 @@
             <span class="cb-filename">license_plate_capture/capture.py</span>
           </div>
           <div class="cb-body">
-<div><span class="c1">from</span> picamera2 <span class="c1">import</span> Picamera2</div>
-<div><span class="c1">import</span> time</div>
-<div>&nbsp;</div>
-<div>cam = Picamera2()</div>
-<div>cfg = cam.create_still_configuration(main={"size": (2304, 1296)})</div>
-<div>cam.configure(cfg)</div>
-<div>cam.start()</div>
-<div>time.sleep(2)  <span class="c3"># รอปรับแสง & โฟกัส</span></div>
-<div>&nbsp;</div>
-<div>cam.capture_file(<span class="c2">"../license_plate_crop/input_images/car.jpg"</span>)</div>
-<div>cam.stop()</div>
-<div>print(<span class="c2">"ถ่ายภาพและบันทึกเรียบร้อย!"</span>)</div>
+<div><span class="c1">from</span> picamera2 <span class="c1">import</span> Picamera2</div><div><span class="c1">import</span> time</div><div>&nbsp;</div><div>cam = Picamera2()</div><div>cfg = cam.create_still_configuration(main={"size": (2304, 1296)})</div><div>cam.configure(cfg)</div><div>cam.start()</div><div>time.sleep(2)  <span class="c3"># รอปรับแสง & โฟกัส</span></div><div>&nbsp;</div><div>cam.capture_file(<span class="c2">"../license_plate_crop/input_images/car.jpg"</span>)</div><div>cam.stop()</div><div>print(<span class="c2">"ถ่ายภาพและบันทึกเรียบร้อย!"</span>)</div>
           </div>
         </div>
       </div>
@@ -889,18 +817,7 @@
             <span class="cb-filename">license_plate_capture/capture_gui.py</span>
           </div>
           <div class="cb-body">
-<div><span class="c1">import</span> streamlit <span class="c1">as</span> st</div>
-<div><span class="c1">from</span> picamera2 <span class="c1">import</span> Picamera2</div>
-<div>&nbsp;</div>
-<div>col1, col2 = st.columns(2)</div>
-<div><span class="c1">with</span> col1:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> st.button(<span class="c2">"ดูตัวอย่าง"</span>):</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame = camera.capture_array()</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.image(frame, caption=<span class="c2">"มุมกล้องสด"</span>)</div>
-<div><span class="c1">with</span> col2:</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> st.button(<span class="c2">"ถ่ายภาพและบันทึก"</span>, type=<span class="c2">"primary"</span>):</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.capture_file(save_path)</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.success(<span class="c2">"บันทึกเข้า input_images สำเร็จ!"</span>)</div>
+<div><span class="c1">import</span> streamlit <span class="c1">as</span> st</div><div><span class="c1">from</span> picamera2 <span class="c1">import</span> Picamera2</div><div>&nbsp;</div><div>col1, col2 = st.columns(2)</div><div><span class="c1">with</span> col1:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> st.button(<span class="c2">"ดูตัวอย่าง"</span>):</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame = camera.capture_array()</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.image(frame, caption=<span class="c2">"มุมกล้องสด"</span>)</div><div><span class="c1">with</span> col2:</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">if</span> st.button(<span class="c2">"ถ่ายภาพและบันทึก"</span>, type=<span class="c2">"primary"</span>):</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.capture_file(save_path)</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.success(<span class="c2">"บันทึกเข้า input_images สำเร็จ!"</span>)</div>
           </div>
         </div>
       </div>
@@ -1079,10 +996,9 @@
         <div class="bullet"><div class="dot"></div><div>นี่คือหลักการ <b>เดียวกัน</b> กับที่ YOLOv8 ใช้เทรนตรวจจับป้ายทะเบียนที่จะเรียนต่อจากนี้ เพียงแต่ Teachable Machine ทำให้เห็นภาพขั้นตอน Collect → Train → Test ได้ง่ายและเร็วกว่ามาก</div></div>
       </div>
       <div class="col-media">
-        <div class="placeholder">
-          <div class="ic">🖥️</div>
-          <div class="lbl">Teachable Machine Hands-on</div>
-          <div class="sub">เปิด teachablemachine.withgoogle.com แล้วลองสร้างโมเดลจำแนกภาพของตัวเอง ใช้เวลาไม่ถึง 5 นาที</div>
+        <div class="img-card">
+          <img src="assets/teachable_machine.png" alt="Teachable Machine website">
+          <div class="img-caption">teachablemachine.withgoogle.com — ลองสร้างโมเดลจำแนกภาพของตัวเอง ใช้เวลาไม่ถึง 5 นาที</div>
         </div>
       </div>
     </div>
@@ -1112,18 +1028,7 @@
             <span class="cb-filename">license_plate_crop/train_model1.py</span>
           </div>
           <div class="cb-body">
-<div><span class="c1">from</span> ultralytics <span class="c1">import</span> YOLO</div>
-<div>&nbsp;</div>
-<div class="c3"># โหลดโมเดลตั้งต้น yolov8n.pt</div>
-<div>model = YOLO(<span class="c2">"yolov8n.pt"</span>)</div>
-<div>&nbsp;</div>
-<div class="c3"># สั่งเทรนด้วย dataset ป้ายทะเบียน</div>
-<div>model.train(</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;data=<span class="c2">"dataset/data.yaml"</span>,</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;epochs=<span class="c2">50</span>,</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;imgsz=<span class="c2">640</span></div>
-<div>)</div>
-<div class="c3"># ผลลัพธ์: models/model1_plate_detect.pt</div>
+<div><span class="c1">from</span> ultralytics <span class="c1">import</span> YOLO</div><div>&nbsp;</div><div class="c3"># โหลดโมเดลตั้งต้น yolov8n.pt</div><div>model = YOLO(<span class="c2">"yolov8n.pt"</span>)</div><div>&nbsp;</div><div class="c3"># สั่งเทรนด้วย dataset ป้ายทะเบียน</div><div>model.train(</div><div>&nbsp;&nbsp;&nbsp;&nbsp;data=<span class="c2">"dataset/data.yaml"</span>,</div><div>&nbsp;&nbsp;&nbsp;&nbsp;epochs=<span class="c2">50</span>,</div><div>&nbsp;&nbsp;&nbsp;&nbsp;imgsz=<span class="c2">640</span></div><div>)</div><div class="c3"># ผลลัพธ์: models/model1_plate_detect.pt</div>
           </div>
         </div>
       </div>
@@ -1187,17 +1092,7 @@
             <span class="cb-filename">license_plate_crop/detect_and_crop.py</span>
           </div>
           <div class="cb-body">
-<div><span class="c1">from</span> ultralytics <span class="c1">import</span> YOLO</div>
-<div><span class="c1">from</span> PIL <span class="c1">import</span> Image</div>
-<div>&nbsp;</div>
-<div>model = YOLO(<span class="c2">"models/model1_plate_detect.pt"</span>)</div>
-<div>results = model.predict(source=str(img_path), conf=<span class="c2">0.5</span>)</div>
-<div>boxes = results[<span class="c2">0</span>].boxes.xyxy.tolist()</div>
-<div>&nbsp;</div>
-<div>orig_img = Image.open(img_path)</div>
-<div><span class="c1">for</span> idx, (x1, y1, x2, y2) <span class="c1">in</span> enumerate(boxes):</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;crop_img = orig_img.crop((x1, y1, x2, y2))</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;crop_img.save(f<span class="c2">"output_crops/{img_path.stem}_plate_{idx}.jpg"</span>)</div>
+<div><span class="c1">from</span> ultralytics <span class="c1">import</span> YOLO</div><div><span class="c1">from</span> PIL <span class="c1">import</span> Image</div><div>&nbsp;</div><div>model = YOLO(<span class="c2">"models/model1_plate_detect.pt"</span>)</div><div>results = model.predict(source=str(img_path), conf=<span class="c2">0.5</span>)</div><div>boxes = results[<span class="c2">0</span>].boxes.xyxy.tolist()</div><div>&nbsp;</div><div>orig_img = Image.open(img_path)</div><div><span class="c1">for</span> idx, (x1, y1, x2, y2) <span class="c1">in</span> enumerate(boxes):</div><div>&nbsp;&nbsp;&nbsp;&nbsp;crop_img = orig_img.crop((x1, y1, x2, y2))</div><div>&nbsp;&nbsp;&nbsp;&nbsp;crop_img.save(f<span class="c2">"output_crops/{img_path.stem}_plate_{idx}.jpg"</span>)</div>
           </div>
         </div>
       </div>
@@ -1228,17 +1123,7 @@
             <span class="cb-filename">license_plate_ocr/ocr_plate.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 1. ตัดขอบดำ/รอยสกรูออก</div>
-<div>pad_y, pad_x = int(h * <span class="c2">0.18</span>), int(w * <span class="c2">0.10</span>)</div>
-<div>inner = img[pad_y:h-pad_y, pad_x:w-pad_x]</div>
-<div>&nbsp;</div>
-<div class="c3"># 2. Grayscale + ขยาย 3 เท่า</div>
-<div>gray = cv2.cvtColor(inner, cv2.COLOR_BGR2GRAY)</div>
-<div>resized = cv2.resize(gray, (w*<span class="c2">3</span>, h*<span class="c2">3</span>), interpolation=cv2.INTER_CUBIC)</div>
-<div>&nbsp;</div>
-<div class="c3"># 3. อ่านข้อความไทย + อังกฤษ</div>
-<div>text = pytesseract.image_to_string(resized, lang=<span class="c2">"tha+eng"</span>, config=<span class="c2">"--psm 11"</span>)</div>
-<div class="c3"># ผลลัพธ์: "กค 9417 | กรุงเทพมหานคร"</div>
+<div class="c3"># 1. ตัดขอบดำ/รอยสกรูออก</div><div>pad_y, pad_x = int(h * <span class="c2">0.18</span>), int(w * <span class="c2">0.10</span>)</div><div>inner = img[pad_y:h-pad_y, pad_x:w-pad_x]</div><div>&nbsp;</div><div class="c3"># 2. Grayscale + ขยาย 3 เท่า</div><div>gray = cv2.cvtColor(inner, cv2.COLOR_BGR2GRAY)</div><div>resized = cv2.resize(gray, (w*<span class="c2">3</span>, h*<span class="c2">3</span>), interpolation=cv2.INTER_CUBIC)</div><div>&nbsp;</div><div class="c3"># 3. อ่านข้อความไทย + อังกฤษ</div><div>text = pytesseract.image_to_string(resized, lang=<span class="c2">"tha+eng"</span>, config=<span class="c2">"--psm 11"</span>)</div><div class="c3"># ผลลัพธ์: "กค 9417 | กรุงเทพมหานคร"</div>
           </div>
         </div>
       </div>
@@ -1269,16 +1154,7 @@
             <span class="cb-filename">license_plate_match/clean_and_match.py</span>
           </div>
           <div class="cb-body">
-<div class="c3"># 1. Regex กรองเฉพาะภาษาไทยและตัวเลข</div>
-<div>clean_text = re.sub(r<span class="c2">"[^ก-๏0-9\s]"</span>, <span class="c2">""</span>, raw_text)</div>
-<div>&nbsp;</div>
-<div class="c3"># 2. แยกเลขทะเบียนไทย</div>
-<div>plate_num = re.search(r<span class="c2">"[ก-ฮ]{1,3}\s?\d{1,4}"</span>, clean_text).group()</div>
-<div>&nbsp;</div>
-<div class="c3"># 3. Fuzzy Match เทียบ 77 จังหวัด</div>
-<div>match = difflib.get_close_matches(seg, provinces, n=<span class="c2">1</span>, cutoff=<span class="c2">0.6</span>)</div>
-<div>score = difflib.SequenceMatcher(<span class="c1">None</span>, seg, match[<span class="c2">0</span>]).ratio()</div>
-<div class="c3"># ผลลัพธ์ CSV: Thai_car_2_plate_0.jpg, กค 9417, กรุงเทพมหานคร, 1.0</div>
+<div class="c3"># 1. Regex กรองเฉพาะภาษาไทยและตัวเลข</div><div>clean_text = re.sub(r<span class="c2">"[^ก-๏0-9\s]"</span>, <span class="c2">""</span>, raw_text)</div><div>&nbsp;</div><div class="c3"># 2. แยกเลขทะเบียนไทย</div><div>plate_num = re.search(r<span class="c2">"[ก-ฮ]{1,3}\s?\d{1,4}"</span>, clean_text).group()</div><div>&nbsp;</div><div class="c3"># 3. Fuzzy Match เทียบ 77 จังหวัด</div><div>match = difflib.get_close_matches(seg, provinces, n=<span class="c2">1</span>, cutoff=<span class="c2">0.6</span>)</div><div>score = difflib.SequenceMatcher(<span class="c1">None</span>, seg, match[<span class="c2">0</span>]).ratio()</div><div class="c3"># ผลลัพธ์ CSV: Thai_car_2_plate_0.jpg, กค 9417, กรุงเทพมหานคร, 1.0</div>
           </div>
         </div>
       </div>
@@ -1306,29 +1182,24 @@
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
         <div class="code-box">
           <div class="cb-header">
+            <span class="cb-dot" style="background:#FF5F56;"></span>
+            <span class="cb-dot" style="background:#FFBD2E;"></span>
+            <span class="cb-dot" style="background:#27C93F;"></span>
             <span class="cb-filename">CLI Mode: run_pipeline.py</span>
           </div>
           <div class="cb-body" style="font-size:13.5px; line-height:1.65;">
-<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">python run_pipeline.py</span></div>
-<div>=== ขั้นตอนที่ 1: ตรวจจับ + Crop ป้ายทะเบียน ===</div>
-<div>  บันทึกแล้ว: Thai_car_2_plate_0.jpg</div>
-<div>=== ขั้นตอนที่ 2: OCR อ่านข้อความป้ายทะเบียน ===</div>
-<div>  Thai_car_2_plate_0.jpg: กค 9417 | กรุงเทพมหานคร</div>
-<div>=== ขั้นตอนที่ 3: Data Cleaning & Matching ===</div>
-<div class="c2">✓ สำเร็จ: เลขทะเบียน='กค 9417' จังหวัด='กรุงเทพมหานคร' (1.0)</div>
+<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">python run_pipeline.py</span></div><div>=== ขั้นตอนที่ 1: ตรวจจับ + Crop ป้ายทะเบียน ===</div><div>  บันทึกแล้ว: Thai_car_2_plate_0.jpg</div><div>=== ขั้นตอนที่ 2: OCR อ่านข้อความป้ายทะเบียน ===</div><div>  Thai_car_2_plate_0.jpg: กค 9417 | กรุงเทพมหานคร</div><div>=== ขั้นตอนที่ 3: Data Cleaning & Matching ===</div><div class="c2">✓ สำเร็จ: เลขทะเบียน='กค 9417' จังหวัด='กรุงเทพมหานคร' (1.0)</div>
           </div>
         </div>
         <div class="code-box">
           <div class="cb-header">
+            <span class="cb-dot" style="background:#FF5F56;"></span>
+            <span class="cb-dot" style="background:#FFBD2E;"></span>
+            <span class="cb-dot" style="background:#27C93F;"></span>
             <span class="cb-filename">Web GUI Mode: license_plate_gui/app.py</span>
           </div>
           <div class="cb-body" style="font-size:13.5px; line-height:1.65;">
-<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">./license_plate_gui/startGUI.sh</span></div>
-<div class="c3">เปิดหน้าเว็บที่ http://localhost:8501</div>
-<div>• อัปโหลดภาพรถยนต์ผ่าน Browser</div>
-<div>• กดปุ่ม <b>"ประมวลผล"</b> รันทั้ง 3 ขั้นตอนอัตโนมัติ</div>
-<div>• แสดงภาพป้ายที่ตัดได้ + เลขทะเบียน + จังหวัด + Score</div>
-<div class="c2">✓ ใช้งานง่าย ไม่ต้องพิมพ์คำสั่งใน Terminal</div>
+<div>pi@raspberrypi:~ <span class="c2">$</span> <span class="c1">./license_plate_gui/startGUI.sh</span></div><div class="c3">เปิดหน้าเว็บที่ http://localhost:8501</div><div>• อัปโหลดภาพรถยนต์ผ่าน Browser</div><div>• กดปุ่ม <b>"ประมวลผล"</b> รันทั้ง 3 ขั้นตอนอัตโนมัติ</div><div>• แสดงภาพป้ายที่ตัดได้ + เลขทะเบียน + จังหวัด + Score</div><div class="c2">✓ ใช้งานง่าย ไม่ต้องพิมพ์คำสั่งใน Terminal</div>
           </div>
         </div>
       </div>
@@ -1355,10 +1226,9 @@
         <div class="bullet"><div class="dot"></div><div><b>แก้ปัญหาหน้างาน:</b> ปรับมุมกล้อง หลีกเลี่ยงแสงสะท้อน และตั้งระยะห่างให้เหมาะสม</div></div>
       </div>
       <div class="col-media">
-        <div class="placeholder">
-          <div class="ic">🚗</div>
-          <div class="lbl">Field Testing & Tuning</div>
-          <div class="sub">ทดสอบการอ่านป้ายทะเบียนรถยนต์จริงในสภาพแสงและมุมมองต่างๆ พร้อมบันทึกผลการทดสอบ</div>
+        <div class="img-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thai_car_license_plate_number_1826.jpg?width=500" alt="Thai license plate mounted on a real car">
+          <div class="img-caption">ทดสอบอ่านป้ายทะเบียนรถยนต์จริงในสภาพแสงและมุมมองต่างๆ (ภาพ: Wikimedia Commons)</div>
         </div>
       </div>
     </div>
